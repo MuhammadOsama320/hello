@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load  static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <title>crud</title>
+</head>
+<body>
+{{ msg }}
+<div id="DivTwo">
+    <form action="/show">
+        <input type="submit" value="show Records">
+    </form>
+</div>
+
+<div id="DivOne">
+    <form action="/send" method="post">
+        {% csrf_token %}
+        <h3>ID     <input required autofocus type="text" name="id" id="id"> </h3>
+        <h3>Data 1 <input required type="text" name="data1"></h3>
+        <h3>Data 2 <input required type="text" name="data2"></h3>
+        <input type="submit" id="btn">
+    </form>
+</div>
+
+</body>
+</html>
