@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load  static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'edit.css' %}">
+    <title>Edit page</title>
+</head>
+<body>
+
+<div id="/show">
+    <form action="/show">
+        <input type="submit" value="show Records">
+    </form>
+</div>
+
+<div id="DivOne">
+    <form action="/RecordEdited" method="post">
+        {% csrf_token %}
+        <h3>ID     <input required autofocus type="text" name="id" id="id" value="{{ ID }}"> </h3>
+        <h3>Data 1 <input required type="text" name="data1" value="{{ data1 }}"></h3>
+        <h3>Data 2 <input required type="text" name="data2" value="{{ data2 }}"></h3>
+        <input type="submit" id="btn" value="Edit Record">
+    </form>
+    <span> {{ msg }} </span>
+</div>
+
+</body>
+</html>
